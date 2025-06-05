@@ -9,6 +9,15 @@ const blogSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  likes: {
+    type: Number,
+    default: 0,
+  },
+  views: {
+    type: Number,
+    default: 0,
+  },
+  
 });
 
 const blogModel = mongoose.model("blog", blogSchema);
