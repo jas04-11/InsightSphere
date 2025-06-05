@@ -122,6 +122,48 @@ router.post("/uploadBlog", upload.single("image"), async (req, res) => {
     });
   }
 });
+router.post("/getBlog", async (req, res) => {
+  let { token, blogId } = req.body;
+  let decoded = jwt.verify(token, secret);
+  let user = await userModel.findOne({ _id: decoded.userId });
+  if (!user) {
+    return res.json({
+      success: false,
+      msg: "User not found",
+    });
+  } else {
+    let blog = await blogModel.findOneAndUpdate(
+      { _id: blogId },
+      { $inc: { views: 1 } },
+      { new: true }
+    );
+    return res.json({
+      success: true,
+      msg: "Blog fetched successfully",
+      blog: blog,
+    });
+  }
+});
+
+// 🆕 NEW: Like a blog post
+router.post("/likeBlog", async (req, res) => {
+  const { token, blogId } = req.body;
+  try {
+    const decoded = jwt.verify(token, secret);
+    const user = await userModel.findById(decoded.userId);
+    if (!user) return res.json({ success: false, msg: "User not found" });
+
+    const blog = await blogModel.findByIdAndUpdate(
+      blogId,
+      { $inc: { likes: 1 } },
+      { new: true }
+    );
+
+    return res.json({ success: true, likes: blog.likes });
+  } catch (err) {
+    return res.json({ success: false, msg: "Something went wrong" });
+  }
+});
 
 router.post("/getBlogs", async (req, res) => {
   let { token } = req.body;
@@ -142,7 +184,9 @@ router.post("/getBlogs", async (req, res) => {
   }
 });
 
-router.post("/getBlog", async (req, res) => {
+
+
+/*router.post("/getBlog", async (req, res) => {
   let { token, blogId } = req.body;
   let decoded = jwt.verify(token, secret);
   let user = await userModel.findOne({ _id: decoded.userId });
@@ -159,6 +203,6 @@ router.post("/getBlog", async (req, res) => {
       blog: blog,
     });
   }
-});
+});*/
 
 module.exports = router;
