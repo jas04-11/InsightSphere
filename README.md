@@ -1,6 +1,9 @@
 InsightSphere - Full-Stack Blog Application ✍️
 -------------------------------------------------
 An intuitive blogging platform built with the MERN stack
+----------------------------------------------------------
+🚀 Live Demo
+🔗 [Coming Soon] – You can deploy it using Render, Vercel, or Netlify + Render.
 --------------------------------------------------------------------------
 Table of Contents:
 
@@ -126,24 +129,7 @@ Endpoint	Method	Description
 -------------------------------------------------------------------
 Project Structure
 -----------------
-insightsphere/
-│
-├── backend/                # Express backend source
-│   ├── models/             # Mongoose models (User, Blog, Comments)
-│   ├── routes/             # API routes (auth, blogs, comments)
-│   ├── uploads/            # Uploaded images folder
-│   ├── index.js            # Server entry point
-│   └── ...
-│
-├── frontend/               # React frontend source
-│   ├── src/
-│   │   ├── components/     # Reusable UI components (Navbar, BlogCard etc)
-│   │   ├── pages/          # Route pages (Home, Login, Signup, BlogDetail etc)
-│   │   ├── App.js          # React main app component
-│   │   └── ...
-│   └── public/
-│
-└── README.md               # Project documentation
+![image](https://github.com/user-attachments/assets/db5d2ebf-75e9-42b6-812d-74e5e8836eed)
 -------------------------------------------------------------------------
 Future Enhancements
 User profile editing with avatar uploads.
