@@ -10,6 +10,7 @@ import SingleBlog from "./pages/SingleBlog";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import UploadBlog from "./pages/UploadBlog";
+import LightDarkToggle from "./components/LightDarkToggle";
 function App() {
   let isLoggedIn = localStorage.getItem("isLoggedIn");
   return (
