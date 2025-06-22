@@ -3,7 +3,7 @@ InsightSphere - Full-Stack Blog Application ✍️
 An intuitive blogging platform built with the MERN stack
 ----------------------------------------------------------
 🚀 Live Demo
-🔗 [Coming Soon] – You can deploy it using Render, Vercel, or Netlify + Render.
+🔗 [Coming Soon] – I will deploy it using Render, Vercel, or Netlify + Render.
 --------------------------------------------------------------------------
 Table of Contents:
 
